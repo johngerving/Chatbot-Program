@@ -1,10 +1,11 @@
 var message = prompt("Please type a message. Type 'xxx' to quit.");
-var helloMessages = ["Hello.", "Hi." "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
+var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
 var helloMessage;
 while(message != "xxx") {
 var message = prompt("Please type a message. Type 'xxx' to quit.");
-if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello.") {
-helloMessage = Math.round(Math.random * helloMessages.length);
+message.toUpperCase();
+if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
+helloMessage = helloMessages[Math.floor(Math.random()*helloMessages.length)];
 document.write(helloMessage);
 }
 }
