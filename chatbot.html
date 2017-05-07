@@ -1,13 +1,22 @@
-var message = prompt("Please type a message. Type 'xxx' to quit.");
-var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
-function randomWord(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+<html>
+<input type="text" id="myText">
+<button onclick="input()">Send</button>
+<script>
+var message = document.getElementById("myText").value;
+var input = function() {
+    var message = document.getElementById("myText").value;
+    var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
+    function randomWord(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+    }
+    while(message != "xxx") {
+        message.toUpperCase();
+        if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
+            document.write(randomWord(helloMessages));
+        }
+    }
+    document.write("Quitting Program...");
 }
-while(message != "xxx") {
-var message = prompt("Please type a message. Type 'xxx' to quit.");
-message.toUpperCase();
-if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
-document.write(randomWord(helloMessages));
-}
-}
-document.write("Quitting Program...");
+
+</script>
+</html>
