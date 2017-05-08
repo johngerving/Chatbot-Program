@@ -1,17 +1,22 @@
 <html>
-<input type="text" id=“input”>
+<!--Create text box for player to type in-->
+<input type="text" id=“message”>
+<!--Create paragraph to show chatbot's messages-->
 <p id="chatbotText"></p>
-<input type=“button” value=“Send” onclick=“input()”/>
+<!--Create button to send messages to chatbot-->
+<button onclick="input()">Send</button>
 <script>
+//function to process user messages
 var input = function() {
-    var message = document.getElementById(“input”).value;
+    var message = document.getElementById("message").value;
+    //create array with list of phrases to use in response to "Hello"
     var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
+    //function to pick random phrase
     function randomWord(arr) {
         return arr[Math.floor(Math.random() * arr.length)];
     }
-    message.toUpperCase();
     if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
-    	document.getElementById("chatbotText").innerHTML = “randomWord(helloMessages)”;
+    	document.getElementById('chatbotText').innerHTML = randomWord(helloMessages);
     }
 }
 </script>
