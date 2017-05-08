@@ -1,8 +1,6 @@
 <html>
 <input type="text" id=“input”>
-<div id=“chatbotText”>
-<p></p>
-</div>
+<p id="chatbotText"></p>
 <input type=“button” value=“Send” onclick=“input()”/>
 <script>
 var input = function() {
@@ -13,9 +11,8 @@ var input = function() {
     }
     message.toUpperCase();
     if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
-    	document.getElementById(‘chatbotText’).innerHTML = “randomWord(helloMessages)”;
+    	document.getElementById("chatbotText").innerHTML = “randomWord(helloMessages)”;
     }
-    document.write("Quitting Program...");
 }
 </script>
 </html>
