@@ -1,23 +1,24 @@
 <html>
 <!--Create text box for player to type in-->
-<input type="text" id=“message”>
+<input type="text" id="message">
 <!--Create paragraph to show chatbot's messages-->
 <p id="chatbotText"></p>
 <!--Create button to send messages to chatbot-->
-<button onclick="input()">Send</button>
+<button id="btnSubmit">Send</button>
 <script>
 //function to process user messages
-var input = function() {
-    var message = document.getElementById("message").value;
-    //create array with list of phrases to use in response to "Hello"
-    var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
-    //function to pick random phrase
-    function randomWord(arr) {
-        return arr[Math.floor(Math.random() * arr.length)];
-    }
-    if(message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
-    	document.getElementById('chatbotText').innerHTML = "<p>randomWord(helloMessages)</p>";
-    }
+var button = document.getElementById("btnSubmit")
+button.onclick = function() {
+var message = document.getElementById("message").value;
+  //create array with list of phrases to use in response to "Hello"
+  var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
+  //function to pick random phrase
+  function randomWord(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+  if (message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
+    document.getElementById('chatbotText').innerHTML = randomWord(helloMessages);
+  }
 }
 </script>
 </html>
