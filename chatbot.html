@@ -15,8 +15,10 @@
 <script>
 //function to process user messages
 var button = document.getElementById("btnSubmit")
+var hasBotAskedHowPlayerIs = false;
 button.onclick = function() {
 var message = document.getElementById("message").value;
+message.toLowerCase();
   //create array with list of phrases to use in response to "Hello"
   var helloMessages = ["Hello.", "Hi.", "Hello!", "Hi!", "Hello. How are you doing?", "Hi. How are you?"];
   //function to pick random phrase
@@ -24,8 +26,11 @@ var message = document.getElementById("message").value;
     return arr[Math.floor(Math.random() * arr.length)];
   }
   if (message === "hi" || message === "hello" || message === "hi!" || message === "hello!" || message === "hi." || message === "hello." || message === "hey." || message === "hey" || message === "hey!") {
-    document.getElementById('chatbotText').innerHTML = randomWord(helloMessages);
-  }
+	var helloMessage = document.getElementById('chatbotText').innerHTML = randomWord(helloMessages);
+	if(helloMessage === "Hello. How are you doing?" || helloMessage === "Hi. How are you?") {
+		hasBotAskedHowPlayerIs = true;
+	}
+  } else if(message === "good" || message === "good!")
 }
 </script>
 </html>
